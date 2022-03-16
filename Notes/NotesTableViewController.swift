@@ -14,8 +14,8 @@ class NotesTableViewController: UITableViewController, AddAndEditNoteViewControl
     }
     
     func addAndEditNoteViewController(_ controller: AddAndEditNoteViewController, didFinishAdding item: NoteItem) {
-        let newRowIndex = items.count
-        items.append(item)
+        let newRowIndex = dataModel.notes.count
+        dataModel.notes.append(item)
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)
@@ -23,17 +23,18 @@ class NotesTableViewController: UITableViewController, AddAndEditNoteViewControl
     }
     
    func addAndEditNoteViewController(_ controller: AddAndEditNoteViewController, didFinishEditing item: NoteItem) {
-       if let index = items.firstIndex(of: item) {
+       if let index = dataModel.notes.firstIndex(of: item) {
            let indexPath = IndexPath(row: index, section: 0)
            if let cell = tableView.cellForRow(at: indexPath) {
-               let item = items[indexPath.row]
+               let item = dataModel.notes[indexPath.row]
                cell.textLabel?.text = item.body
            }
        }
        navigationController?.popViewController(animated: true)
     }
     
-    var items = [NoteItem]()
+    //var items = [NoteItem]()
+    var dataModel: DataModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +45,13 @@ class NotesTableViewController: UITableViewController, AddAndEditNoteViewControl
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return dataModel.notes.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
-        let item = items[indexPath.row]
+        let item = dataModel.notes[indexPath.row]
         cell.textLabel?.text = item.body
         return cell
     }
@@ -58,14 +59,14 @@ class NotesTableViewController: UITableViewController, AddAndEditNoteViewControl
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if tableView.cellForRow(at: indexPath) != nil {
-            _ = items[indexPath.row]
+            _ = dataModel.notes[indexPath.row]
             performSegue(withIdentifier: "EditItem", sender: indexPath.row)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        items.remove(at: indexPath.row)
+        dataModel.notes.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .fade)
     }
@@ -82,7 +83,7 @@ class NotesTableViewController: UITableViewController, AddAndEditNoteViewControl
            let controller = segue.destination as! AddAndEditNoteViewController
            controller.delegate = self
            let index = sender as! Int
-           controller.itemToEdit = items[index]
+           controller.itemToEdit = dataModel.notes[index]
        }
     }
 

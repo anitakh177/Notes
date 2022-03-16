@@ -15,6 +15,7 @@
 		08916BB227DF254F00A7B43B /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08916BB127DF254F00A7B43B /* NotesTableViewController.swift */; };
 		08916BB427DF264900A7B43B /* NoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08916BB327DF264900A7B43B /* NoteItem.swift */; };
 		08916BB627DF2CBD00A7B43B /* AddAndEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08916BB527DF2CBD00A7B43B /* AddAndEditTableViewController.swift */; };
+		08A857CE27E1B1BB00E8A510 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A857CD27E1B1BB00E8A510 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		08916BB127DF254F00A7B43B /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		08916BB327DF264900A7B43B /* NoteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItem.swift; sourceTree = "<group>"; };
 		08916BB527DF2CBD00A7B43B /* AddAndEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEditTableViewController.swift; sourceTree = "<group>"; };
+		08A857CD27E1B1BB00E8A510 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				08916BA327DF248E00A7B43B /* Main.storyboard */,
 				08916BB527DF2CBD00A7B43B /* AddAndEditTableViewController.swift */,
 				08916BB327DF264900A7B43B /* NoteItem.swift */,
+				08A857CD27E1B1BB00E8A510 /* DataModel.swift */,
 				08916BB127DF254F00A7B43B /* NotesTableViewController.swift */,
 				08916BA627DF248F00A7B43B /* Assets.xcassets */,
 				08916BA827DF248F00A7B43B /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				08916BA027DF248E00A7B43B /* SceneDelegate.swift in Sources */,
 				08916BB227DF254F00A7B43B /* NotesTableViewController.swift in Sources */,
 				08916BB427DF264900A7B43B /* NoteItem.swift in Sources */,
+				08A857CE27E1B1BB00E8A510 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NoteItem: NSObject {
+class NoteItem: NSObject, Codable {
     
     var body = ""
 }
