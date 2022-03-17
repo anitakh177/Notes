@@ -9,7 +9,7 @@ import UIKit
 
 class DataModel {
     var notes = [NoteItem]()
-    
+     
     //MARK: - Save file path
 
     func documentsDirectory() -> URL {
